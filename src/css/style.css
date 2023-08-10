@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button,
+[type=button],
+[role=button] {
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  color: inherit;
+}
+
+:root {
+  --size-1: 0.234375rem;
+  --size-2: 0.46875rem;
+  --size-3: 0.703125rem;
+  --size-4: 0.9375rem;
+  --size-5: 1.171875rem;
+  --size-6: 1.40625rem;
+  --size-7: 1.640625rem;
+  --size-8: 1.875rem;
+  --size-9: 2.109375rem;
+  --size-10: 2.34375rem;
+  --size-11: 2.578125rem;
+  --size-12: 2.8125rem;
+  --size-13: 3.046875rem;
+  --size-14: 3.28125rem;
+  --size-15: 3.515625rem;
+  --size-16: 3.75rem;
+  --size-17: 3.984375rem;
+  --size-18: 4.21875rem;
+  --size-19: 4.453125rem;
+  --size-20: 4.6875rem;
+  --size-21: 4.921875rem;
+  --size-22: 5.15625rem;
+  --size-23: 5.390625rem;
+  --size-24: 5.625rem;
+  --size-25: 5.859375rem;
+  --size-26: 6.09375rem;
+  --size-27: 6.328125rem;
+  --size-28: 6.5625rem;
+  --size-29: 6.796875rem;
+  --size-30: 7.03125rem;
+  --size-31: 7.265625rem;
+  --size-32: 7.5rem;
+  --size-33: 7.734375rem;
+  --size-34: 7.96875rem;
+  --size-35: 8.203125rem;
+  --size-36: 8.4375rem;
+  --red-value: 0 78% 62%;
+  --cyan-value: 180 62% 55%;
+  --orange-value: 34 97% 64%;
+  --blue-value: 212 86% 64%;
+  --dark-blue-value: 234 12% 34%;
+  --grayish-blue-value: 229 6% 66%;
+  --light-gray-value: 0 0% 98%;
+  --red: hsl(0 78% 62%);
+  --cyan: hsl(180 62% 55%);
+  --orange: hsl(34 97% 64%);
+  --blue: hsl(212 86% 64%);
+  --dark-blue: hsl(234 12% 34%);
+  --grayish-blue: hsl(229 6% 66%);
+  --light-gray: hsl(0 0% 98%);
+}
+
+.container {
+  width: min(1200px, 100% - var(--size-14));
+  margin-inline: auto;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-gray);
+}
+
+.header {
+  text-align: center;
+}
+.header__wrapper {
+  margin-block: var(--size-12);
+}
+.header__wrapper > * + * {
+  margin-top: var(--size-5);
+}
+.header__heading {
+  font-size: var(--size-7);
+  font-weight: 200;
+  color: var(--dark-blue);
+}
+.header__heading span {
+  display: inline-block;
+  width: 100%;
+}
+.header__heading strong {
+  font-weight: 600;
+}
+@media (width > 900px) {
+  .header__heading {
+    font-size: var(--size-9);
+  }
+}
+.header__text {
+  color: var(--grayish-blue);
+  margin-inline: auto;
+  max-width: 55ch;
+}
+
+.features__wrapper {
+  margin-block: var(--size-16);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: var(--size-8);
+}
+@media (width > 900px) {
+  .features__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: ". team ." "supervisor team calculator" "supervisor karma calculator" ". karma .";
+  }
+}
+
+.feature {
+  border-top: 6px solid;
+  padding: var(--size-6);
+  height: 250px;
+  border-radius: var(--size-2);
+  background-color: #fff;
+  box-shadow: 0 var(--size-3) var(--size-5) hsl(var(--dark-blue-value)/0.2);
+  background-image: url("../../images/icon-supervisor.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - var(--size-6)) calc(100% - var(--size-6));
+}
+.feature__heading {
+  font-size: var(--size-6);
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+.feature__desc {
+  margin-top: var(--size-2);
+  font-size: var(--size-4);
+  color: var(--grayish-blue);
+}
+.feature[data-type=supervisor] {
+  border-color: var(--cyan);
+  background-image: url("../../images/icon-supervisor.svg");
+}
+@media (width > 900px) {
+  .feature[data-type=supervisor] {
+    grid-area: supervisor;
+  }
+}
+.feature[data-type=team] {
+  border-color: var(--red);
+  background-image: url("../../images/icon-team-builder.svg");
+}
+@media (width > 900px) {
+  .feature[data-type=team] {
+    grid-area: team;
+  }
+}
+.feature[data-type=karma] {
+  border-color: var(--orange);
+  background-image: url("../../images/icon-karma.svg");
+}
+@media (width > 900px) {
+  .feature[data-type=karma] {
+    grid-area: karma;
+  }
+}
+.feature[data-type=calculator] {
+  border-color: var(--blue);
+  background-image: url("../../images/icon-calculator.svg");
+}
+@media (width > 900px) {
+  .feature[data-type=calculator] {
+    grid-area: calculator;
+  }
+}
+
+.attribution {
+  font-size: var(--size-4);
+  background: hsl(var(--dark-blue-value)/0.2);
+  text-align: center;
+  padding-block: var(--size-4);
+}
+.attribution a {
+  text-underline-offset: var(--size-1);
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+  font-size: var(--size-4);
+}
+.attribution a img {
+  width: var(--size-5);
+}
+
+/*# sourceMappingURL=style.css.map */
